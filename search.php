@@ -97,7 +97,7 @@
 
             echo "<p class='resultsCount'>$numResults results found</p>";
 
-            echo $resultsProvider->getResultsHtml(1,$pageSize,$term);
+            echo $resultsProvider->getResultsHtml($page, $pageSize ,$term);
         ?>
 
     </div>
