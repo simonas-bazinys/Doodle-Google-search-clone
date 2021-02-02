@@ -49,7 +49,7 @@
                     <form action="search.php" method="get">
 
                         <div class="searchBarContainer">
-
+                             <input type="hidden" name="type" value="<?php echo $type?>">         
                             <input class="searchBox" type="text" name="term" value="<?php echo isset($term) ? $term : ''  ?>">
                             <button type="submit" class="searchButton">
                                 <img src="assets/icons/searchIcon.png" alt="Search"/>
