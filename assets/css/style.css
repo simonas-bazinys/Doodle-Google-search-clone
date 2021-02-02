@@ -7,15 +7,15 @@ html, body {
     margin: 0;
     height: 100%;
 }
-
 .wrapper {
     display: flex;
     flex-direction: column;
-    /*min-height: 100%;*/
+    min-height: 0%;
 }
 
 .wrapper.indexPage {
     justify-content: center;
+    height: 100%;
 }
 
 .mainSection {
@@ -192,6 +192,8 @@ html, body {
     font-size: 18px;
 }
 
+
+
 .resultContainer .resultTitle a:hover {
     text-decoration: underline;
 }
@@ -204,4 +206,39 @@ html, body {
 
 .resultContainer .resultDescription {
     font-size: 14px;
+}
+
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.pageButtons {
+    display: flex;
+}
+
+.pageNumberContainer img {
+    height: 37px;   
+}
+
+.pageNumberContainer, .pageNumberContainer a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.pageNumber {
+
+    color: #000;
+    font-size: 13px;
+
+}
+
+a .pageNumber {
+
+    color: #4285f4;
+
 }
