@@ -1,7 +1,7 @@
 <?php
 
     include ("assets/config/db_config.php");
-    include ("classes/SearchResultsProvider.php");
+    include ("assets/classes/SearchResultsProvider.php");
 
     if (isset($_GET["term"])){
         $term = $_GET["term"];
