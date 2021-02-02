@@ -67,7 +67,7 @@
 
                 $resultsHTML .= "<div class='resultContainer'>
                                     <h3 class='resultTitle'>
-                                        <a class='resultLink' href='$url'>
+                                        <a class='resultLink' href='$url' data-linkId='$id'>
                                             $title
                                         </a>
                                     </h3>   
