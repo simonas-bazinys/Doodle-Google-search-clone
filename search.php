@@ -28,7 +28,7 @@
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper searchResultsPage">
 
         <div class="header">
 
@@ -37,7 +37,7 @@
                 <div class="logoContainer">
                     
                     <a href="index.php">
-                        <img id="DoodleLogo" src="assets/images/DoodleLogo.png" alt="Google">
+                        <img id="DoodleLogo" src="assets/logo/DoodleLogo.png" alt="Google">
                     </a>
 
                 </div>
@@ -50,7 +50,7 @@
 
                             <input class="searchBox" type="text" name="term" value="<?php echo isset($term) ? $term : ''  ?>">
                             <button type="submit" class="searchButton">
-                                <img src="assets/images/icons/searchIcon.png" alt="Search"/>
+                                <img src="assets/icons/searchIcon.png" alt="Search"/>
                             </button>
 
                         </div>
@@ -102,6 +102,58 @@
 
     </div>
 
+    <div class="paginationContainer">
+
+        <div class="pageButtons">
+
+            <div class="pageNumberContainer">
+                <img src="assets/logo/BlueD.png" alt="D">
+            </div>
+
+            <?php 
+
+                $pagesToShow = 10;
+                $numOfPages = ceil($numResults / $pageSize);
+                $currentPage = $page - floor($pagesToShow / 2);
+                
+
+                $pagesLeft = min($pagesToShow, $numOfPages);
+
+                if ($currentPage < 1) $currentPage = 1;
+
+                if ($currentPage + $pagesLeft > $numOfPages + 1) $currentPage = $numOfPages + 1 - $pagesLeft;
+
+                while($pagesLeft > 0 && $currentPage <= $numOfPages){
+
+
+                    if ($currentPage == $page) echo "<div class='pageNumberContainer'>
+                                                        <img src='assets/logo/RedO.png'>
+                                                        <span class='pageNumber'>$currentPage</span>
+                                                    </div>";
+                    
+                    
+                    else echo "<div class='pageNumberContainer'>
+                                    <a href='search.php?term=$term&type=$type&page=$currentPage'>
+                                        <img src='assets/logo/YellowO.png'>
+                                        <span class='pageNumber'>$currentPage</span>
+                                    </a>
+                                </div>";
+
+                    
+                    $currentPage++;
+                    $pagesLeft--;
+                }
+            ?>
+
+            <div class="pageNumberContainer">
+                <img src="assets/logo/dle.png" alt="DLE">
+            </div>
+
+        </div>
+
+        
+
+    </div>
 
 
 </body>
